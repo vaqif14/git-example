@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 
@@ -10,11 +10,13 @@ const MainApp = () => {
   return (
     <React.StrictMode>
       <>
-      <p>Main App</p>
+        <p>Main App</p>
       </>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <React.Suspense fallback={<p>Loading ..</p>}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </React.Suspense>
     </React.StrictMode>
   );
 };
