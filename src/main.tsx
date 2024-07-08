@@ -9,6 +9,9 @@ import { store } from "./store/store.tsx";
 const MainApp = () => {
   return (
     <React.StrictMode>
+      <>
+      <p>Main App</p>
+      </>
       <Provider store={store}>
         <App />
       </Provider>
